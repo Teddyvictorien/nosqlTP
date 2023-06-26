@@ -25,4 +25,13 @@ mongoose.connect(`mongodb+srv://teddyvictoriendev:SwKcTeRmdcp4Kvfd@cluster0.1nzz
 app.use('/produit', produitRoutes);
 app.use('/categorie', categorieRoutes);
 
+//Dans le cas d'utilisation de Redis
+// j'aurais utilisé ce code afin de me connecté à ma db
+// const redis = require('redis');
+// const client = redis.createClient();  //par default redis.createClient() va utilisé 127.0.0.1 et 6379 acomme hostname et port
+
+// client.on('connect', function() {
+//   console.log('Connected!');
+// });
+
 module.exports = app;

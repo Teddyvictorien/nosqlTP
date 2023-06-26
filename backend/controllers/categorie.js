@@ -39,11 +39,12 @@ exports.getOneCategorie= (req, res, next) => {
 };
 
 exports.modifyCategorie = (req, res, next) => {
+    console.log(req.body.slug)
     const categorie = new Categorie({
         slug : req.body.slug,
         name : req.body.name
       });
-    Categorie.updateOne({ _slug: req.params.slug }, categorie).then(
+    Categorie.updateOne({ slug: req.params.slug }, categorie).then(
         () => {
             res.status(200).json(
                 { message: 'Categorie modifié avec succés !'
@@ -91,6 +92,7 @@ exports.getAllCategorie = (req, res, next) => {
 
 
   exports.associateCategorie = (req, res, next) => {
+    console.log(req.body.slug)
     const categorie = new Categorie({
         slug : req.body.slug,
         name : req.body.name,
